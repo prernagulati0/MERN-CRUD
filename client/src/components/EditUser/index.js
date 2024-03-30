@@ -17,13 +17,22 @@ const EditUser = () => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-  const fetchData = async () => {
-    const getUser = await axios.get(`http://localhost:8000/api/getUser/${id}`);
-    setUser(getUser.data);
-  };
+
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8000/api/getUser/${id}`
+        );
+        setUser(response.data);
+      } catch (error) {
+        console.error("Error fetching user:", error);
+      }
+    };
+
     fetchData();
   }, [id]);
+
   const submitHandler = async (e) => {
     e.preventDefault();
     await axios
