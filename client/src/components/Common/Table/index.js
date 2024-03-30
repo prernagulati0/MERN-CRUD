@@ -13,25 +13,29 @@ const Table = (props) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((user, index) => {
-          return (
-            <tr key={user?._id}>
-              <td>{index + 1}</td>
-              <td>
-                {user?.firstName} {user?.lastName}
-              </td>
-              <td>{user?.email}</td>
-              <td className="actionButtons">
-                <button onClick={() => deleteHandler(user._id)}>
-                  <i className="fa-solid fa-trash"></i>
-                </button>
-                <Link to={`/edit/${user._id}`}>
-                  <i className="fa-regular fa-pen-to-square"></i>
-                </Link>
-              </td>
-            </tr>
-          );
-        })}
+        {!!data?.length ? (
+          data.map((user, index) => {
+            return (
+              <tr key={user?._id}>
+                <td>{index + 1}</td>
+                <td>
+                  {user?.firstName} {user?.lastName}
+                </td>
+                <td>{user?.email}</td>
+                <td className="actionButtons">
+                  <button onClick={() => deleteHandler(user._id)}>
+                    <i className="fa-solid fa-trash"></i>
+                  </button>
+                  <Link to={`/edit/${user._id}`}>
+                    <i className="fa-regular fa-pen-to-square"></i>
+                  </Link>
+                </td>
+              </tr>
+            );
+          })
+        ) : (
+          <p className="no_data_found">No user found</p>
+        )}
       </tbody>
     </table>
   );

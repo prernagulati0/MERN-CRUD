@@ -5,6 +5,7 @@
     border-radius: 8px;
     margin: 50px auto;
     padding: 50px;
+    min-height: 150px;
 }
 
 .addButton {
@@ -33,6 +34,20 @@ table {
     }
 
     tbody {
+        border-collapse: collapse;
+        position: relative;
+
+        .no_data_found {
+            color: #0a3ac2;
+            font-weight: 500;
+            position: absolute;
+            padding: 30px 0;
+            text-align: center;
+            width: 99.7%;
+            border: 0 solid #090909;
+            border-width: 0px 1px 1px 1px;
+        }
+
         td {
             padding: 8px;
             text-align: center
