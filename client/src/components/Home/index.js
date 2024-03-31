@@ -6,13 +6,18 @@ import toast from "react-hot-toast";
 import Table from "../Common/Table";
 import { tableHeaders } from "../utils";
 import URLS from "../../urls";
+import Loader from "../Common/Loader";
 const Home = () => {
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
   const fetchData = async () => {
     try {
+      setLoading(true);
       const getUserData = await axios.get(URLS.GET_ALL_USER);
       setUsers(getUserData?.data);
+      setLoading(false);
     } catch {
+      setLoading(false);
       toast.error("Something went wrong!", { position: "top-right" });
     }
   };
@@ -33,11 +38,18 @@ const Home = () => {
       <Link to={"/add"} className="addButton">
         Add User
       </Link>
-      <Table
-        data={users}
-        headers={tableHeaders}
-        deleteHandler={deleteHandler}
-      />
+      <div className="relative">
+        {" "}
+        {loading ? (
+          <Loader />
+        ) : (
+          <Table
+            data={users}
+            headers={tableHeaders}
+            deleteHandler={deleteHandler}
+          />
+        )}
+      </div>
     </div>
   );
 };

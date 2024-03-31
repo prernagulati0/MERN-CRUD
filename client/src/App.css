@@ -15,8 +15,12 @@ body {
     width: 70% !important;
     padding: 50px 20px !important;
   }
-  .userTable{
+  .userTable {
     width: 80% !important;
     padding: 50px 20px !important;
   }
+}
+.relative {
+  position: relative;
+  min-height: 150px;
 }

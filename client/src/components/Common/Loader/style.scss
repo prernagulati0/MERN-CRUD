@@ -1,0 +1,14 @@
+.loader_wrapper {
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+
+
+    .loader-logo {
+        height: 130px;
+        width: 180px;
+    }
+}
