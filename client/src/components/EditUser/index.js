@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import URLS from "../../../urls";
 
 const EditUser = () => {
   const users = {
@@ -21,9 +22,7 @@ const EditUser = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8000/api/getUser/${id}`
-        );
+        const response = await axios.get(`${URLS.GET_USER}/${id}`);
         setUser(response.data);
       } catch (error) {
         toast.error("Something went wrong!", { position: "top-right" });
@@ -37,7 +36,7 @@ const EditUser = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     await axios
-      .put(`http://localhost:8000/api/update/${id}`, user)
+      .put(`${URLS.EDIT_USER}/${id}`, user)
       .then((res) => {
         toast.success(res?.data?.msg, { position: "top-right" });
         navigate("/");
