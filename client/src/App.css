@@ -9,3 +9,14 @@
 body {
   background-color: #f7f7f7;
 }
+
+@media screen and (max-width: 768px) {
+  .addUser {
+    width: 70% !important;
+    padding: 50px 20px !important;
+  }
+  .userTable{
+    width: 80% !important;
+    padding: 50px 20px !important;
+  }
+}

@@ -8,8 +8,12 @@ import { tableHeaders } from "../utils";
 const Home = () => {
   const [users, setUsers] = useState([]);
   const fetchData = async () => {
-    const getUserData = await axios.get("http://localhost:8000/api/getAll");
-    setUsers(getUserData?.data);
+    try {
+      const getUserData = await axios.get("http://localhost:8000/api/getAll");
+      setUsers(getUserData?.data);
+    } catch {
+      toast.error("Something went wrong!", { position: "top-right" });
+    }
   };
   useEffect(() => {
     fetchData();
@@ -21,7 +25,9 @@ const Home = () => {
       );
       setUsers((prevUser) => prevUser.filter((user) => user._id !== userId));
       toast.success(data?.data?.msg, { position: "top-right" });
-    } catch (e) {}
+    } catch (e) {
+      toast.error("Something went wrong!", { position: "top-right" });
+    }
   };
   return (
     <div className="userTable">

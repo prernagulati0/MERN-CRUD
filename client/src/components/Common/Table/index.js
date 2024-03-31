@@ -23,9 +23,9 @@ const Table = (props) => {
                 </td>
                 <td>{user?.email}</td>
                 <td className="actionButtons">
-                  <button onClick={() => deleteHandler(user._id)}>
-                    <i className="fa-solid fa-trash"></i>
-                  </button>
+                  <span onClick={() => deleteHandler(user._id)}>
+                  <i className="fa fa-trash-alt"></i>
+                  </span>
                   <Link to={`/edit/${user._id}`}>
                     <i className="fa-regular fa-pen-to-square"></i>
                   </Link>

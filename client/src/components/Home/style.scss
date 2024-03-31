@@ -50,27 +50,32 @@ table {
 
         td {
             padding: 8px;
-            text-align: center
+            word-break: break-all;
+            text-align: center;
+
+            &.actionButtons {
+                text-align: center;
+
+                a,
+                span {
+                    display: inline;
+                    border: 0;
+                    outline: none;
+                    // background: red;
+                    // padding: 8px 10px;
+                    color: red;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                a {
+                    color: green;
+                    text-decoration: none;
+                    margin-left: 10px;
+                }
+            }
         }
 
-        .actionButtons {
 
-            a,
-            button {
-                border: 0;
-                outline: none;
-                background: red;
-                padding: 8px 10px;
-                color: #fff;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-
-            a {
-                background-color: green;
-                text-decoration: none;
-                margin-left: 10px;
-            }
-        }
     }
 }

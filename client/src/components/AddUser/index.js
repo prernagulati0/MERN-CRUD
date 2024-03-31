@@ -24,7 +24,10 @@ const AddUser = () => {
         toast.success(res?.data?.msg, { position: "top-right" });
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        toast.error("Something went wrong!", { position: "top-right" });
+        console.log(error);
+      });
   };
   return (
     <div className="addUser">
