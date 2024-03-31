@@ -5,7 +5,7 @@ import "./style.scss";
 import toast from "react-hot-toast";
 import Table from "../Common/Table";
 import { tableHeaders } from "../utils";
-import URLS from "../../../urls";
+import URLS from "../../urls";
 const Home = () => {
   const [users, setUsers] = useState([]);
   const fetchData = async () => {

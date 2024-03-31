@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./style.scss";
 import axios from "axios";
 import toast from "react-hot-toast";
-import URLS from "../../../urls";
+import URLS from "../../urls";
 const AddUser = () => {
   const users = {
     firstName: "",

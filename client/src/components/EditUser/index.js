@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import URLS from "../../../urls";
+import URLS from "../../urls";
 
 const EditUser = () => {
   const users = {

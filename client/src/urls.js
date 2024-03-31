@@ -1,4 +1,4 @@
-const BASE_URL = `${process.env.REACT_APP_KONG_URL}/api`;
+const BASE_URL = `${process.env.REACT_APP_BASE_URL}/api`;
 const URLS = {
   GET_ALL_USER: `${BASE_URL}/getAll`,
   GET_USER: `${BASE_URL}/getUser`,
